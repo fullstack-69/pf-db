@@ -4,10 +4,12 @@
     "@tsconfig/node-ts/tsconfig.json"
   ],
   "compilerOptions": {
+    "types": ["node"],
+    "rootDir": ".",
     "outDir": "./dist",
-    "baseUrl": "./",
     "paths": {
       "@db/*": ["./db/*"]
     }
-  }
+  },
+  "include": ["./db/**/*", "./drizzle.config.ts"]
 }

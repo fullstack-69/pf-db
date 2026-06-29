@@ -1,48 +1,38 @@
 {
-  "name": "",
+  "name": "pf-db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
-  "license": "AGPL-version-3.0",
-  "private": false,
-  "engines": {
-    "node": ">= 14.0.0",
-    "npm": ">= 6.0.0"
-  },
-  "homepage": "",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "bugs": "",
-  "keywords": [],
-  "author": {
-    "name": "",
-    "email": "",
-    "url": ""
-  },
-  "contributors": [],
   "scripts": {
-    "db:generate": "cross-env NODE_OPTIONS='--import tsx' drizzle-kit generate",
-    "db:push": "cross-env NODE_OPTIONS='--import tsx' drizzle-kit push",
-    "db:migrate": "cross-env NODE_OPTIONS='--import tsx' drizzle-kit migrate",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate",
     "db:prototype": "tsx ./db/prototype.ts",
     "eol": "eolConverter _entrypoint/*.sh"
   },
-  "devDependencies": {
-    "@tsconfig/node-lts": "^22.0.2",
-    "@tsconfig/node-ts": "^23.6.1",
-    "@types/node": "^24.0.4",
-    "cross-env": "^7.0.3",
-    "drizzle-kit": "^0.31.3",
-    "eol-converter-cli": "^1.1.0",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.9.0",
+      "onFail": "download"
+    }
   },
+  "type": "module",
   "dependencies": {
-    "dotenv": "^16.6.0",
-    "drizzle-orm": "^0.44.2",
-    "postgres": "^3.4.7"
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^24.0.0",
+    "@tsconfig/node-ts": "^23.6.4",
+    "@types/node": "^26.0.1",
+    "drizzle-kit": "^0.31.10",
+    "eol-converter-cli": "^1.1.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
   }
 }
