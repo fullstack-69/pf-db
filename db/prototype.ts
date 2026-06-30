@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, like } from "drizzle-orm";
 import { dbClient, dbConn } from "@db/client.js";
 import { todoTable } from "@db/schema.js";
 
@@ -11,6 +11,10 @@ async function insertData() {
 
 async function queryData() {
   const results = await dbClient.query.todoTable.findMany();
+
+  // const results = await dbClient.query.todoTable.findMany({
+  //   where: like(todoTable.todoText, "%reading%"),
+  // });
   console.log(results);
   dbConn.end();
 }
